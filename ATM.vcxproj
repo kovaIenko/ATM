@@ -71,6 +71,7 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Receipt.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +81,7 @@
     <ClInclude Include="Card.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="Receipt.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
