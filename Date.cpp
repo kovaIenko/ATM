@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sstream>
+#include <string>
 #include <ctime>
 #include <vector>
 #include "Date.h";
@@ -16,9 +17,11 @@ Date::Date() {
 	_month = (now->tm_mon+1);
 	_year = (now->tm_year+1900);
 	return;
-}
+};
 
-Date::Date(const string& s):_day(1){
+Date::Date(const string& s):
+_day(1)
+{
 	 istringstream f(s);
     string monthStr;
 	string yearStr;
@@ -28,23 +31,17 @@ Date::Date(const string& s):_day(1){
 	int year = atoi(yearStr.c_str());
 	setMonth(month);
 	setYear(year + 2000); 
-	
-
-
-     
-}
+};
 
 Date:: Date(int y, int m, int d ):
 	_year(y), _month(m), _day(d) 
 {
-	return;
-}
+};
 
 Date::Date(const Date& d):
 	_year(d.year()), _month(d.month()), _day(d.day())
 {
-	return;
-}
+};
 
 Date& Date::operator=(const Date& d)
 	{
@@ -52,12 +49,10 @@ Date& Date::operator=(const Date& d)
 	_month=d.month();
 	_day=d.day();
 	return *this;
+	};
 
-	}
-
-ostream& operator<<(ostream& os, const Date& d){
-
+ostream& operator<<(ostream& os, const Date& d)
+{
 	os << d.day() << ',' << d.month() << ',' << d.year();
-
 	return os;
-}
+};

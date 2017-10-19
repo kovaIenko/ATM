@@ -1,8 +1,9 @@
 #include <iostream>
 #include "Account.h"
+#include <string>
 using namespace std;
 
-Account::Account(string account, string bank):
+    Account::Account(string& account, string& bank):
 _account(account), _bank(bank)
 {
 }
@@ -11,16 +12,31 @@ Account::~Account()
 {
 }
 
-/*bool Account::contains(const Card& card) const
+Account::Account(const Account& acc):
+_account(acc.getAccount()), _bank(acc.getBank())
 {
-	return cards.containsKey(card.getCardNumb());
 }
-*/
-/*void Account::addCard(const Card& card)
+
+bool Account::contains(const Card& card)
 {
-	if((*this).contains(card))             // I don't know what I must do in this situation
+	if ( cards.find(card.getAccountNumb()) == cards.end() ) {
+           return false;
+      } else {
+            return true;
+             }
+};
+
+void Account::insert(Card& card)
+{
+	cout<<"Card: "<<card.getAccountNumb().c_str()<<endl;
+	cards.insert(pair<string,Card>(card.getAccountNumb(),card));
+}
+
+void Account::addCard(Card& card)
+{
+	if(contains(card))             // I don't know what I must do in this situation
 	{
 	}
-	cards.add(card.getCardNumb(), card);
+	else	
+	insert(card);
 }
-*/

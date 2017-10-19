@@ -1,12 +1,11 @@
 #include <iostream>
-#include "Bank.h";
 using namespace std;
 
 class ATM
 {
 private:
-
+	string _address;
+	string _bank;
 public:
 	ATM();
-	static Bank& getInstance();
 };
