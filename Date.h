@@ -1,14 +1,15 @@
 #include <iostream>
 #include <cstring>
-#include <string>
 using namespace std;
-
+ //forgit
 class Date 
 {
 private:
 	int _year;
 	int _month;
 	int _day;
+	void normalizeDate();
+	bool isIntercalary(int);
 public:
 	Date();
 	Date(const string&);
@@ -16,6 +17,9 @@ public:
 	Date(const Date&);
 	~Date(){};
 	Date& operator=(const Date&);
+
+	bool operator==(const Date&) const;
+	bool operator!=(const Date&) const;
 
 	int year() const {return _year;}
 	int month() const {return _month;}
